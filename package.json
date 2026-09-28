@@ -1,0 +1,24 @@
+{
+  "name": "practicaintegradora_primeraunidad",
+  "version": "1.0.0",
+  "description": "Frontend inicial hecho con HTML, CSS y JavaScript.",
+  "main": "script.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/santiagodelamora/Practica_Integradora_Primera_Unidad.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/santiagodelamora/Practica_Integradora_Primera_Unidad/issues"
+  },
+  "homepage": "https://github.com/santiagodelamora/Practica_Integradora_Primera_Unidad#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
