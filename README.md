@@ -12,4 +12,4 @@ Los archivos del frontend estan dentro de la carpeta `public` para mantenerlos s
 - Preparado para integrarse despues con Express/Node.
 
 ## Como abrirlo
-Escribe el comando `npm app.js` y dirígete a la ruta localhost que se muestra por consola.
+Escribe el comando `node app.js` y dirígete a la ruta localhost que se muestra por consola.
