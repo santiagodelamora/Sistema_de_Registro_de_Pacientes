@@ -2,6 +2,8 @@
 
 Frontend inicial hecho con HTML, CSS y JavaScript.
 
+Los archivos del frontend estan dentro de la carpeta `Frontend` para mantenerlos separados del backend.
+
 ## Alcance
 
 - Interfaz visual para panel principal, pacientes, citas y expedientes.
@@ -12,4 +14,4 @@ Frontend inicial hecho con HTML, CSS y JavaScript.
 
 ## Como abrirlo
 
-Abre `index.html` en el navegador.
+Abre `Frontend/index.html` en el navegador.
