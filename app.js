@@ -30,6 +30,57 @@ app.get('/api/pacientes', (solicitud, respuesta) => {
     ]);
 });
 
+// Ruta personalizada
+app.get('/api/alumnos', (solicitud, respuesta) => {
+    respuesta.json([
+        {
+            nombre: "Santiago Nicolás De la mora Núñez",
+            materia: "Aplicaciones web",
+            tecnologiasQueDomina: [
+                "HTML",
+                "CSS",
+                "JavaScript",
+                "Express.js",
+                "React",
+                "Vue",
+                "PHP",
+                "Python",
+                "Java",
+                "Java Enterprise Edition (JSP y Servlets)",
+                "JavaFX",
+                "Android SDK"
+            ]
+        },
+        {
+            nombre: "Victor Manuel Almendarez García",
+            materia: "Aplicaciones web",
+            tecnologiasQueDomina: [
+                "C#",
+                "Claude Code",
+                "Codex"
+            ]
+        },
+        {
+            nombre: "Roger Alejandro Aguilar Núñez",
+            materia: "Aplicaciones web",
+            tecnologiasQueDomina: [
+                "C#",
+                "Claude Code",
+                "Codex"
+            ]
+        },
+        {
+            nombre: "Joel Canche Chac",
+            materia: "Aplicaciones web",
+            tecnologiasQueDomina: [
+                "C#",
+                "Claude Code",
+                "Codex"
+            ]
+        }
+    ]);
+});
+
 app.listen(PUERTO, () => {
     console.log(`Servidor corriendo en http://localhost:${PUERTO}`);
 });
