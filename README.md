@@ -1,11 +1,10 @@
 # Sistema de Registro de Pacientes
 
 Frontend inicial hecho con HTML, CSS y JavaScript.
-
-Los archivos del frontend estan dentro de la carpeta `Frontend` para mantenerlos separados del backend.
+Backend hecho con JavaScript y Express.js en Node.js.
+Los archivos del frontend estan dentro de la carpeta `public` para mantenerlos separados del backend.
 
 ## Alcance
-
 - Interfaz visual para panel principal, pacientes, citas y expedientes.
 - Datos de ejemplo cargados desde JavaScript local.
 - Sin formularios funcionales.
@@ -13,5 +12,4 @@ Los archivos del frontend estan dentro de la carpeta `Frontend` para mantenerlos
 - Preparado para integrarse despues con Express/Node.
 
 ## Como abrirlo
-
-Abre `Frontend/index.html` en el navegador.
+Escribe el comando `npm app.js` y dirígete a la ruta localhost que se muestra por consola.
