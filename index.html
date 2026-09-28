@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sistema de Registro de Pacientes</title>
+    <link rel="preconnect" href="https://images.unsplash.com" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebar">
+        <div class="brand">
+          <div class="brand-icon" aria-hidden="true">
+            <span>+</span>
+          </div>
+          <div>
+            <strong>MedRegistro</strong>
+            <small>Pacientes y control clinico</small>
+          </div>
+        </div>
+
+        <nav class="nav-list" aria-label="Navegacion principal">
+          <button class="nav-item active" type="button" data-view="dashboard">
+            <span aria-hidden="true">IN</span>
+            Inicio
+          </button>
+          <button class="nav-item" type="button" data-view="patients">
+            <span aria-hidden="true">PA</span>
+            Pacientes
+          </button>
+          <button class="nav-item" type="button" data-view="appointments">
+            <span aria-hidden="true">CI</span>
+            Citas
+          </button>
+          <button class="nav-item" type="button" data-view="records">
+            <span aria-hidden="true">EX</span>
+            Expedientes
+          </button>
+        </nav>
+
+        <div class="scope-note">
+          <strong>Alcance actual</strong>
+          <p>Solo HTML, CSS y JavaScript. Sin formularios ni conexion al backend.</p>
+        </div>
+      </aside>
+
+      <div class="backdrop" id="backdrop"></div>
+
+      <main class="main-content">
+        <header class="topbar">
+          <button class="menu-button" id="menuButton" type="button" aria-label="Abrir menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <div>
+            <span class="eyebrow">Panel frontend</span>
+            <h1 id="pageTitle">Inicio</h1>
+          </div>
+          <div class="topbar-tools">
+            <div class="search-preview" aria-label="Buscador pendiente">
+              <strong>Buscar paciente</strong>
+              <span>Pendiente de backend</span>
+            </div>
+            <div class="user-chip" aria-label="Usuario de prueba">
+              <span>AV</span>
+              <strong>Admin</strong>
+            </div>
+          </div>
+        </header>
+
+        <section class="view active" id="dashboard" aria-labelledby="dashboard-title">
+          <div class="overview-layout">
+            <div class="hero">
+              <div class="hero-copy">
+                <span class="eyebrow">Sistema de registro</span>
+                <h2 id="dashboard-title">Control clinico listo para conectar datos reales.</h2>
+                <p>
+                  La interfaz ya organiza pacientes, citas y expedientes con datos de muestra.
+                  Cuando llegue Express/Node, estas vistas se conectan sin cambiar la estructura.
+                </p>
+              </div>
+              <div class="hero-actions">
+                <button class="disabled-action" type="button" disabled>Registrar paciente</button>
+                <button class="disabled-action secondary" type="button" disabled>Agendar cita</button>
+              </div>
+            </div>
+
+            <aside class="handoff-panel" aria-label="Estado de integracion">
+              <span class="eyebrow">Integracion</span>
+              <h3>Frontend separado del backend</h3>
+              <ul class="handoff-list">
+                <li>
+                  <span>01</span>
+                  <p>Vistas y navegacion listas.</p>
+                </li>
+                <li>
+                  <span>02</span>
+                  <p>Formularios reales pausados.</p>
+                </li>
+                <li>
+                  <span>03</span>
+                  <p>Conexion futura con Express/Node.</p>
+                </li>
+              </ul>
+            </aside>
+          </div>
+
+          <div class="metrics-grid" id="metricsGrid"></div>
+
+          <div class="dashboard-grid">
+            <section class="panel wide-panel">
+              <div class="panel-header">
+                <div>
+                  <h3>Pacientes recientes</h3>
+                  <p>Listado de muestra para revisar el diseno antes del backend.</p>
+                </div>
+              </div>
+              <div class="table-wrapper">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Paciente</th>
+                      <th>Edad</th>
+                      <th>Motivo</th>
+                      <th>Estado</th>
+                      <th>Ultima visita</th>
+                    </tr>
+                  </thead>
+                  <tbody id="patientRows"></tbody>
+                </table>
+              </div>
+            </section>
+
+            <section class="panel">
+              <div class="panel-header">
+                <div>
+                  <h3>Citas de hoy</h3>
+                  <p>Agenda provisional.</p>
+                </div>
+              </div>
+              <div class="timeline" id="appointmentList"></div>
+            </section>
+          </div>
+        </section>
+
+        <section class="view" id="patients" aria-labelledby="patients-title">
+          <div class="panel full-panel">
+            <div class="panel-header with-action">
+              <div>
+                <h2 id="patients-title">Pacientes</h2>
+                <p>Vista estatica. El alta y la edicion se integraran cuando exista la API.</p>
+              </div>
+              <button class="disabled-action dark" type="button" disabled>Nuevo paciente pendiente</button>
+            </div>
+            <div class="patient-card-grid" id="patientCards"></div>
+          </div>
+        </section>
+
+        <section class="view" id="appointments" aria-labelledby="appointments-title">
+          <div class="panel full-panel">
+            <div class="panel-header">
+              <div>
+                <h2 id="appointments-title">Citas</h2>
+                <p>Tarjetas de agenda listas para conectarse a datos reales mas adelante.</p>
+              </div>
+            </div>
+            <div class="appointment-grid" id="appointmentCards"></div>
+          </div>
+        </section>
+
+        <section class="view" id="records" aria-labelledby="records-title">
+          <div class="panel full-panel">
+            <div class="panel-header">
+              <div>
+                <h2 id="records-title">Expedientes</h2>
+                <p>Seccion reservada para historial medico, documentos y notas clinicas.</p>
+              </div>
+            </div>
+            <div class="empty-state">
+              <span aria-hidden="true">OK</span>
+              <h3>Modulo preparado para integracion</h3>
+              <p>
+                Cuando el backend este terminado, aqui se podran mostrar expedientes reales por paciente.
+              </p>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
